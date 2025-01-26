@@ -50,7 +50,6 @@ MIDDLEWARE = [
 ]
 
 
-CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'PictureStorage.urls'
 
@@ -128,7 +127,7 @@ REST_FRAMEWORK = {
 
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=435),
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=5),
     "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
 }
 
@@ -163,5 +162,13 @@ cloudinary.config(
     api_secret = os.getenv('api_secret'),
     secure=True
 )
+
+CORS_ALLOWED_ORIGINS = [
+    "https://picture-storage.vercel.app/",
+    "https://picture-storage.vercel.app",
+]
+
+
+
 
 
